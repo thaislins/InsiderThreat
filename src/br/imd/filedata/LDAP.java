@@ -1,13 +1,13 @@
 package br.imd.filedata;
 
-public class LDAP extends Data{
-	
+public class LDAP extends Data {
+
 	private String employee_name;
 	private String user_id;
 	private String email;
 	private String domain;
 	private String role;
-	
+
 	public LDAP(String employee_name, String user_id, String email, String domain, String role) {
 		this.employee_name = employee_name;
 		this.user_id = user_id;
@@ -54,5 +54,5 @@ public class LDAP extends Data{
 
 	public void setRole(String role) {
 		this.role = role;
-	} 
+	}
 }

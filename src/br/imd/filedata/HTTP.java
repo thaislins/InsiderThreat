@@ -1,13 +1,17 @@
 package br.imd.filedata;
 
-public class HTTP extends Data{
+public class HTTP extends Data {
 
 	private String id;
 	private String date;
 	private String user;
 	private String pc;
 	private String url;
-	
+
+	public HTTP() {
+
+	}
+
 	public HTTP(String id, String date, String user, String pc, String url) {
 		this.id = id;
 		this.date = date;

@@ -1,14 +1,18 @@
 package br.imd.filedata;
 
-public class Logon extends Data{
-	
+public class Logon extends Data {
+
 	private String id;
 	private String date;
 	private String user;
 	private String pc;
 	private String activity;
-	
-	public Logon(String id, String date,String user,String pc, String activity) {
+
+	public Logon() {
+
+	}
+
+	public Logon(String id, String date, String user, String pc, String activity) {
 		this.id = id;
 		this.date = date;
 		this.user = user;

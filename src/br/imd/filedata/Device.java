@@ -1,14 +1,18 @@
 package br.imd.filedata;
 
-public class Device extends Data{
-	
+public class Device extends Data {
+
 	private String id;
 	private String date;
 	private String user;
 	private String pc;
 	private String activity;
-	
-	public Device(String id, String date,String user,String pc, String activity) {
+
+	public Device() {
+
+	}
+
+	public Device(String id, String date, String user, String pc, String activity) {
 		this.id = id;
 		this.date = date;
 		this.user = user;
@@ -54,7 +58,5 @@ public class Device extends Data{
 
 	public void setActivity(String activity) {
 		this.activity = activity;
-	}	
+	}
 }
-
-
