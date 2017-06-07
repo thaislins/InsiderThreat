@@ -3,6 +3,9 @@ package br.imd.filedata;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -33,18 +36,19 @@ public class FileRead {
 		data = null;
 	}
 
-	public Data dataType(ArrayList<String> str) {
+	public Data dataType(ArrayList<String> str) throws ParseException {
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		if (csvFile.equals(DEVICE_FILE))
-			return new Device(str.get(0), str.get(1), str.get(2), str.get(3), str.get(4));
+			return new Device(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
 		else if (csvFile.equals(HTTP_FILE))
-			return new HTTP(str.get(0), str.get(1), str.get(2), str.get(3), str.get(4));
+			return new HTTP(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
 		else if (csvFile.equals(LDAP_FILE))
 			return new LDAP(str.get(0), str.get(1), str.get(2), str.get(3), str.get(4));
 		else
-			return new Logon(str.get(0), str.get(1), str.get(2), str.get(3), str.get(4));
+			return new Logon(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
 	}
 
-	public void read() throws IOException {
+	public void read() throws IOException, ParseException {
 		reader = new BufferedReader(new FileReader(csvFile));
 		String firstLine = reader.readLine();
 		String key;
@@ -64,7 +68,7 @@ public class FileRead {
 			}
 			deviceInfo.get(key).add(data);
 		}
-		System.out.println(deviceInfo.get("RES0962").get(0).getId());
+		System.out.println(deviceInfo.get("RES0962").get(0).getDate());
 	}
 
 	public static void main(String args[]) {
@@ -74,6 +78,9 @@ public class FileRead {
 			reader.read();
 
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -1,9 +1,11 @@
 package br.imd.filedata;
 
+import java.util.Date;
+
 public class Device extends Data {
 
 	private String id;
-	private String date;
+	private Date date;
 	private String user;
 	private String pc;
 	private String activity;
@@ -12,7 +14,7 @@ public class Device extends Data {
 
 	}
 
-	public Device(String id, String date, String user, String pc, String activity) {
+	public Device(String id, Date date, String user, String pc, String activity) {
 		this.id = id;
 		this.date = date;
 		this.user = user;
@@ -28,11 +30,11 @@ public class Device extends Data {
 		this.id = id;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

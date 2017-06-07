@@ -1,13 +1,15 @@
 package br.imd.filedata;
 
+import java.util.Date;
+
 public abstract class Data {
 	
 	public String getId() {
-		return "";
+		return null;
 	}
 	
-	public String getDate() {
-		return "";
+	public Date getDate() {
+		return null;
 	}
 	
 }
