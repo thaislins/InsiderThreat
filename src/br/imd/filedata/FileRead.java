@@ -14,23 +14,39 @@ public class FileRead {
 
 	private HashMap<String, ArrayList<Data>> deviceInfo;
 	private ArrayList<String> fileInfo;
+	private Data data;
 	private String csvFile;
 	private BufferedReader reader;
 	private String line;
 	private String csvSplitBy;
 	private String[] info;
-	private Data data;
 	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device-reduced.csv";
 	static final String HTTP_FILE = System.getProperty("user.dir") + "/files/http-reduced.csv";
 	static final String LDAP_FILE = System.getProperty("user.dir") + "/files/ldap.csv";
 	static final String LOGON_FILE = System.getProperty("user.dir") + "/files/logon-reduced.csv";
+
+	public HashMap<String, ArrayList<Data>> getDeviceInfo() {
+		return deviceInfo;
+	}
+
+	public void setDeviceInfo(HashMap<String, ArrayList<Data>> deviceInfo) {
+		this.deviceInfo = deviceInfo;
+	}
+
+	public Data getData() {
+		return data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
 
 	public FileRead(String csvFile) {
 		deviceInfo = new HashMap<>();
 		fileInfo = new ArrayList<>();
 		this.csvFile = csvFile;
 		reader = null;
-		line = "";
+		line = null;
 		csvSplitBy = ",";
 		info = null;
 		data = null;
@@ -69,19 +85,5 @@ public class FileRead {
 			deviceInfo.get(key).add(data);
 		}
 		System.out.println(deviceInfo.get("RES0962").get(0).getDate());
-	}
-
-	public static void main(String args[]) {
-
-		FileRead reader = new FileRead(HTTP_FILE);
-		try {
-			reader.read();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

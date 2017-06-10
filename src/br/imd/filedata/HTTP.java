@@ -9,6 +9,7 @@ public class HTTP extends Data {
 	private String user;
 	private String pc;
 	private String url;
+	private String activity;
 
 	public HTTP() {
 
@@ -20,6 +21,7 @@ public class HTTP extends Data {
 		this.user = user;
 		this.pc = pc;
 		this.url = url;
+		activity = "acessed";
 	}
 
 	public String getId() {
