@@ -5,7 +5,7 @@ import java.text.ParseException;
 
 import br.imd.filedata.FileRead;
 
-public class Tree {
+public class Main {
 
 	private FileRead readerLDAP;
 	private FileRead readerDevice;
@@ -32,5 +32,10 @@ public class Tree {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void main(String args[]) {
+		Main t = new Main();
+		t.readFiles();
 	}
 }

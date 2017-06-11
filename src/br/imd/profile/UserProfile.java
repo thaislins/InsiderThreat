@@ -20,5 +20,4 @@ public class UserProfile extends LDAP {
 	public void setDevices(HashMap<String, PC> devices) {
 		this.devices = devices;
 	}
-
 }

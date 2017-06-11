@@ -10,9 +10,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import br.imd.profile.ProfileBuilder;
+
 public class FileRead {
 
 	private HashMap<String, ArrayList<Data>> deviceInfo;
+	private ProfileBuilder profile;
 	private ArrayList<String> fileInfo;
 	private Data data;
 	private String csvFile;
@@ -50,18 +53,20 @@ public class FileRead {
 		csvSplitBy = ",";
 		info = null;
 		data = null;
+		profile = new ProfileBuilder();
 	}
 
 	public Data dataType(ArrayList<String> str) throws ParseException {
 		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		if (csvFile.equals(DEVICE_FILE))
-			return new Device(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
+			return new Device(str.get(0), df.parse(str.get(1)), str.get(2).replace("DTAA/", ""), str.get(3),
+					str.get(4));
 		else if (csvFile.equals(HTTP_FILE))
-			return new HTTP(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
+			return new HTTP(str.get(0), df.parse(str.get(1)), str.get(2).replace("DTAA/", ""), str.get(3), str.get(4));
 		else if (csvFile.equals(LDAP_FILE))
 			return new LDAP(str.get(0), str.get(1), str.get(2), str.get(3), str.get(4));
 		else
-			return new Logon(str.get(0), df.parse(str.get(1)), str.get(2), str.get(3), str.get(4));
+			return new Logon(str.get(0), df.parse(str.get(1)), str.get(2).replace("DTAA/", ""), str.get(3), str.get(4));
 	}
 
 	public void read() throws IOException, ParseException {
@@ -84,6 +89,6 @@ public class FileRead {
 			}
 			deviceInfo.get(key).add(data);
 		}
-		System.out.println(deviceInfo.get("RES0962").get(0).getDate());
+		// System.out.println(deviceInfo.get("RES0962").get(0).getDate());
 	}
 }
