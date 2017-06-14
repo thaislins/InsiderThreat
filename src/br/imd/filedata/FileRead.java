@@ -74,21 +74,20 @@ public class FileRead {
 		String firstLine = reader.readLine();
 		String key;
 
+		ProfileBuilder profile = new ProfileBuilder();
 		while ((line = reader.readLine()) != null) {
 
 			fileInfo = new ArrayList<>(Arrays.asList(line.split(csvSplitBy)));
 			data = dataType(fileInfo);
 
 			if (data instanceof LDAP)
-				key = fileInfo.get(1);
+				profile.addToDatabase((LDAP) data);
+			if (data instanceof Device)
+				profile.addToDatabase((Device) data);
+			else if (data instanceof Logon)
+				profile.addToDatabase((Logon) data);
 			else
-				key = fileInfo.get(2).replace("DTAA/", "");
-
-			if (!deviceInfo.containsKey(key)) {
-				deviceInfo.put(key, new ArrayList<Data>());
-			}
-			deviceInfo.get(key).add(data);
+				profile.addToDatabase((HTTP) data);
 		}
-		// System.out.println(deviceInfo.get("RES0962").get(0).getDate());
 	}
 }

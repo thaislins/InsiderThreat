@@ -63,4 +63,12 @@ public class HTTP extends Data {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
+	public String getActivity() {
+		return activity;
+	}
+
+	public void setActivity(String activity) {
+		this.activity = activity;
+	}
 }
