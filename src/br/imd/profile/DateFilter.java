@@ -49,6 +49,7 @@ public class DateFilter {
 			}
 		}
 		userprofile.setFiltered(true);
+		userprofile.dateString(date1, date2);
 		Database.users.put("f_" + userprofile.getUser_id(), userprofile);
 		return userprofile;
 	}

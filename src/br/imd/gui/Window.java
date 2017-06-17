@@ -31,9 +31,6 @@ public class Window extends JFrame {
 
 	private void initComponents() {
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		UserVisualization frame = new UserVisualization();
-		frame.setVisible(true);
-		getContentPane().add(frame);
 	}
 
 	public void pause() {
@@ -42,11 +39,6 @@ public class Window extends JFrame {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String args[]) {
-		Window w = new Window();
-		w.setVisible(true);
 	}
 
 }

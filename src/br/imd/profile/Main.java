@@ -15,7 +15,7 @@ public class Main {
 	private FileRead readerDevice;
 	private FileRead readerLogon;
 	private FileRead readerHttp;
-	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device-reduced.csv";
+	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device.csv";
 	static final String HTTP_FILE = System.getProperty("user.dir") + "/files/http-reduced.csv";
 	static final String LDAP_FILE = System.getProperty("user.dir") + "/files/ldap.csv";
 	static final String LOGON_FILE = System.getProperty("user.dir") + "/files/logon-reduced.csv";

@@ -22,9 +22,11 @@ import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 import java.util.Map.Entry;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 import org.jgraph.JGraph;
 import org.jgraph.graph.AttributeMap;
@@ -53,33 +55,57 @@ import br.imd.profile.UserProfile;
  * @author Barak Naveh
  * @since Aug 3, 2003
  */
-
 public class UserVisualization extends JFrame {
-
+	private JPanel p;
+	private JGraph jgraph;
 	private int frameSize;
-
 	private JGraphModelAdapter<String, DefaultEdge> jgAdapter;
+	private JButton buttonUserId;
+	private JTextField textUserId;
+
+	/**
+	 * An alternative starting point for this demo, to also allow running this
+	 * applet as an application.
+	 *
+	 * @param args
+	 *            ignored.
+	 */
+	public static void main(String[] args) {
+		UserVisualization frame = new UserVisualization();
+		frame.setVisible(true);
+	}
 
 	public UserVisualization() {
+		// getContentPane().setLayout(null);
 		frameSize = 960;
-		setBackground(Color.white);
+		// setBackground(Color.white);
 		setSize(frameSize, frameSize);
 		setTitle("Insider Threat");
 		setVisible(true);
-		createTree("ACD0647");
+		init();
+		// getContentPane().add(textUserId);
+		// getContentPane().add(buttonUserId);
+
 	}
 
-	public void createTree(String userID) {
-
-		JPanel p = new JPanel();
+	public void init() {
+		p = new JPanel();
 		p.setBackground(Color.white);
+
+		jgraph = createTree("ACD0647");
+		JScrollPane scrollpane = new JScrollPane(p);
+		getContentPane().add(scrollpane, BorderLayout.CENTER);
+
+		p.add(jgraph);
+		// p.add(buttonUserId);
+		// p.add(textUserId);
+	}
+
+	public JGraph createTree(String userID) {
 
 		ListenableGraph<String, DefaultEdge> g = new ListenableDirectedGraph<>(DefaultEdge.class);
 		jgAdapter = new JGraphModelAdapter<>(g);
 		JGraph jgraph = new JGraph(jgAdapter);
-		JScrollPane scrollpane = new JScrollPane(p);
-		getContentPane().add(scrollpane, BorderLayout.CENTER);
-		p.add(jgraph);
 
 		Main t = new Main();
 		t.readFiles();
@@ -95,7 +121,7 @@ public class UserVisualization extends JFrame {
 		if (!userprofile.isFiltered())
 			v2 = "All dates";
 		else
-			v2 = userprofile.getDate().toString();
+			v2 = userprofile.getFilteredDate();
 
 		g.addVertex(v1);
 		g.addVertex(v2);
@@ -135,7 +161,6 @@ public class UserVisualization extends JFrame {
 			}
 			emptyX += 100;
 		}
-
 		// String v6 = "A";
 		// String v7 = "B";
 		// String v8 = "C";
@@ -161,8 +186,11 @@ public class UserVisualization extends JFrame {
 		// positionVertexAt(v9, 800, 200);
 		// positionVertexAt(v10, 900, 200);
 		// positionVertexAt(v11, 1000, 200);
+
+		return jgraph;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void positionVertexAt(Object vertex, int x, int y) {
 		DefaultGraphCell cell = jgAdapter.getVertexCell(vertex);
 		AttributeMap attr = cell.getAttributes();
