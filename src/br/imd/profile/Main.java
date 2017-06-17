@@ -12,10 +12,8 @@ import br.imd.filedata.Logon;
 public class Main {
 
 	private FileRead readerLDAP;
-	private FileRead readerDevice;
-	private FileRead readerLogon;
-	private FileRead readerHttp;
-	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device.csv";
+	private FileRead readerFile;
+	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device-reduced.csv";
 	static final String HTTP_FILE = System.getProperty("user.dir") + "/files/http-reduced.csv";
 	static final String LDAP_FILE = System.getProperty("user.dir") + "/files/ldap.csv";
 	static final String LOGON_FILE = System.getProperty("user.dir") + "/files/logon-reduced.csv";
@@ -53,17 +51,10 @@ public class Main {
 		}
 	}
 
-	public void readFiles() {
+	public void readLDAP() {
 		readerLDAP = new FileRead(LDAP_FILE);
-		readerDevice = new FileRead(DEVICE_FILE);
-		readerLogon = new FileRead(LOGON_FILE);
-		readerHttp = new FileRead(HTTP_FILE);
-
 		try {
 			readerLDAP.read();
-			readerDevice.read();
-			readerLogon.read();
-			readerHttp.read();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -71,17 +62,22 @@ public class Main {
 		}
 	}
 
-	public static void main(String args[]) throws ParseException {
-		Main t = new Main();
-		t.readFiles();
-		t.printProfile("ACD0647");
-		// DateFilter date = new DateFilter();
-		//
-		// DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-		// Date date1 = df.parse("01/04/2009 13:16:32");
-		// Date date2 = df.parse("01/06/2011 07:26:39");
-		//
-		// UserProfile user = date.chooseDate(date1, date2, "ACD0647");
-		// // date.printProfile(user);
+	public void readFiles(String file) {
+
+		if (file.equals("Device")) {
+			readerFile = new FileRead(DEVICE_FILE);
+		} else if (file.equals("Logon")) {
+			readerFile = new FileRead(LOGON_FILE);
+		} else {
+			readerFile = new FileRead(HTTP_FILE);
+		}
+
+		try {
+			readerFile.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 }

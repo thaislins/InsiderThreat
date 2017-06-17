@@ -19,10 +19,14 @@ package br.imd.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
 import java.util.Map.Entry;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -60,8 +64,18 @@ public class UserVisualization extends JFrame {
 	private JGraph jgraph;
 	private int frameSize;
 	private JGraphModelAdapter<String, DefaultEdge> jgAdapter;
-	private JButton buttonUserId;
-	private JTextField textUserId;
+	private JButton btnUserId;
+	private JButton btnReadLDAP;
+	private JButton btnReadFiles;
+	private JButton btnReadDevice;
+	private JButton btnReadLogon;
+	private JButton btnReadHttp;
+	private JComboBox chooseFile;
+	private JComboBox date1;
+	private JComboBox date2;
+	private JTextField txtUserId;
+	private Main t;
+	private String userId;
 
 	/**
 	 * An alternative starting point for this demo, to also allow running this
@@ -76,29 +90,117 @@ public class UserVisualization extends JFrame {
 	}
 
 	public UserVisualization() {
-		// getContentPane().setLayout(null);
+		userId = "";
 		frameSize = 960;
-		// setBackground(Color.white);
 		setSize(frameSize, frameSize);
 		setTitle("Insider Threat");
 		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		init();
-		// getContentPane().add(textUserId);
-		// getContentPane().add(buttonUserId);
 
 	}
 
 	public void init() {
+		// Cria JPanel princiapal que será dividido em 2
+		JPanel main = new JPanel();
+		main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
+
+		// JPanel que terá a árvore
 		p = new JPanel();
 		p.setBackground(Color.white);
 
-		jgraph = createTree("ACD0647");
+		// Permite scroll no JPanel
 		JScrollPane scrollpane = new JScrollPane(p);
-		getContentPane().add(scrollpane, BorderLayout.CENTER);
 
-		p.add(jgraph);
-		// p.add(buttonUserId);
-		// p.add(textUserId);
+		// JPanel que terá botôes para interação do usuário
+		JPanel p2 = new JPanel();
+		p2.setBackground(Color.gray);
+		p2.setLayout(null);
+
+		btnUserId = new JButton("Enter Id");
+		btnReadLDAP = new JButton("Read LDAP");
+		txtUserId = new JTextField();
+		btnUserId.setBounds(100, 50, 120, 15);
+		btnReadLDAP.setBounds(100, 150, 120, 15);
+		txtUserId.setBounds(100, 20, 120, 15);
+
+		p2.add(btnUserId);
+		p2.add(txtUserId);
+		p2.add(btnReadLDAP);
+
+		main.add(scrollpane, BorderLayout.CENTER);
+		main.add(p2, BorderLayout.CENTER);
+		getContentPane().add(main, BorderLayout.CENTER);
+
+		// Implementação das ações dos botões
+		btnReadLDAP.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				t = new Main();
+				t.readLDAP();
+				System.out.println("User File Read");
+				addButtons(p2);
+
+				btnReadFiles.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+
+						String fileChoice = (String) chooseFile.getSelectedItem();
+
+						t.readFiles(fileChoice);
+						System.out.println("Files Read");
+						if (!userId.equals("")) {
+							Thread t = new Thread(new Runnable() {
+								public void run() {
+									jgraph = createTree(userId);
+									p.removeAll();
+									p.add(jgraph);
+									scrollpane.revalidate();
+									scrollpane.repaint();
+								}
+							});
+							t.start();
+						}
+					}
+
+				});
+			}
+		});
+
+		btnUserId.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Thread t = new Thread(new Runnable() {
+					@Override
+					public void run() {
+						userId = txtUserId.getText();
+						jgraph = createTree(userId);
+						p.removeAll();
+						p.add(jgraph);
+						txtUserId.setText("");
+						scrollpane.revalidate();
+						scrollpane.repaint();
+					}
+				});
+				t.start();
+			}
+		});
+	}
+
+	public void addButtons(JPanel p2) {
+
+		chooseFile = new JComboBox();
+		chooseFile.setBounds(100, 200, 120, 24);
+		btnReadFiles = new JButton("Read File");
+		btnReadFiles.setBounds(100, 230, 120, 15);
+
+		chooseFile.addItem("Device");
+		chooseFile.addItem("Logon");
+		chooseFile.addItem("Http");
+
+		p2.add(chooseFile);
+		p2.add(btnReadFiles);
+		p2.repaint();
 	}
 
 	public JGraph createTree(String userID) {
@@ -107,8 +209,6 @@ public class UserVisualization extends JFrame {
 		jgAdapter = new JGraphModelAdapter<>(g);
 		JGraph jgraph = new JGraph(jgAdapter);
 
-		Main t = new Main();
-		t.readFiles();
 		UserProfile userprofile = Database.users.get(userID);
 
 		// create a JGraphT graph
@@ -138,7 +238,7 @@ public class UserVisualization extends JFrame {
 			positionVertexAt(v3, emptyX, 200);
 
 			for (Device device : pcs.getValue().getDeviceActivity()) {
-				v4 = device.getActivity();
+				v4 = device.getActivity() + "_" + device.getId();
 				g.addVertex(v4);
 				g.addEdge(v3, v4);
 				positionVertexAt(v4, emptyX, 300);
@@ -161,32 +261,6 @@ public class UserVisualization extends JFrame {
 			}
 			emptyX += 100;
 		}
-		// String v6 = "A";
-		// String v7 = "B";
-		// String v8 = "C";
-		// String v9 = "D";
-		// String v10 = "E";
-		// String v11 = "F";
-		//
-		// g.addVertex(v6);
-		// g.addVertex(v7);
-		// g.addVertex(v8);
-		// g.addVertex(v9);
-		// g.addVertex(v10);
-		// g.addVertex(v11);
-		// g.addEdge(v2, v6);
-		// g.addEdge(v2, v7);
-		// g.addEdge(v2, v8);
-		// g.addEdge(v2, v9);
-		// g.addEdge(v2, v10);
-		// g.addEdge(v2, v11);
-		// positionVertexAt(v6, 500, 200);
-		// positionVertexAt(v7, 600, 200);
-		// positionVertexAt(v8, 700, 200);
-		// positionVertexAt(v9, 800, 200);
-		// positionVertexAt(v10, 900, 200);
-		// positionVertexAt(v11, 1000, 200);
-
 		return jgraph;
 	}
 
