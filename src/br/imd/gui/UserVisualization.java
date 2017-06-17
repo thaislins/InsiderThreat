@@ -17,12 +17,14 @@
  */
 package br.imd.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.geom.Rectangle2D;
 import java.util.Map.Entry;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import org.jgraph.JGraph;
 import org.jgraph.graph.AttributeMap;
@@ -51,60 +53,49 @@ import br.imd.profile.UserProfile;
  * @author Barak Naveh
  * @since Aug 3, 2003
  */
+
 public class UserVisualization extends JFrame {
-	// private static final long serialVersionUID = 3256444702936019250L;
-	private static final Color DEFAULT_BG_COLOR = Color.decode("#FAFBFF");
-	private static final Dimension DEFAULT_SIZE = new Dimension(530, 320);
+
 	private int frameSize;
 
-	//
 	private JGraphModelAdapter<String, DefaultEdge> jgAdapter;
 
-	/**
-	 * An alternative starting point for this demo, to also allow running this
-	 * applet as an application.
-	 *
-	 * @param args
-	 *            ignored.
-	 */
-	public static void main(String[] args) {
-		UserVisualization frame = new UserVisualization();
-		frame.setVisible(true);
-	}
-
 	public UserVisualization() {
-
 		frameSize = 960;
-		setTitle("JGraphT Adapter to JGraph Demo");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBackground(Color.white);
 		setSize(frameSize, frameSize);
+		setTitle("Insider Threat");
+		setVisible(true);
+		createTree("ACD0647");
+	}
+
+	public void createTree(String userID) {
+
+		JPanel p = new JPanel();
+		p.setBackground(Color.white);
+
 		ListenableGraph<String, DefaultEdge> g = new ListenableDirectedGraph<>(DefaultEdge.class);
 		jgAdapter = new JGraphModelAdapter<>(g);
 		JGraph jgraph = new JGraph(jgAdapter);
-		getContentPane().add(jgraph);
-		createTree("ACD0647", g);
-	}
-
-	public void createTree(String userID, ListenableGraph<String, DefaultEdge> g) {
+		JScrollPane scrollpane = new JScrollPane(p);
+		getContentPane().add(scrollpane, BorderLayout.CENTER);
+		p.add(jgraph);
 
 		Main t = new Main();
 		t.readFiles();
 		UserProfile userprofile = Database.users.get(userID);
 
 		// create a JGraphT graph
-
 		String v1 = userprofile.getUser_id();
 		String v2;
+		String v3;
+		String v4;
+		String v5;
+
 		if (!userprofile.isFiltered())
 			v2 = "All dates";
 		else
 			v2 = userprofile.getDate().toString();
-
-		String devices;
-		String v3;
-		String v4;
-		String v5;
 
 		g.addVertex(v1);
 		g.addVertex(v2);
@@ -144,9 +135,34 @@ public class UserVisualization extends JFrame {
 			}
 			emptyX += 100;
 		}
+
+		// String v6 = "A";
+		// String v7 = "B";
+		// String v8 = "C";
+		// String v9 = "D";
+		// String v10 = "E";
+		// String v11 = "F";
+		//
+		// g.addVertex(v6);
+		// g.addVertex(v7);
+		// g.addVertex(v8);
+		// g.addVertex(v9);
+		// g.addVertex(v10);
+		// g.addVertex(v11);
+		// g.addEdge(v2, v6);
+		// g.addEdge(v2, v7);
+		// g.addEdge(v2, v8);
+		// g.addEdge(v2, v9);
+		// g.addEdge(v2, v10);
+		// g.addEdge(v2, v11);
+		// positionVertexAt(v6, 500, 200);
+		// positionVertexAt(v7, 600, 200);
+		// positionVertexAt(v8, 700, 200);
+		// positionVertexAt(v9, 800, 200);
+		// positionVertexAt(v10, 900, 200);
+		// positionVertexAt(v11, 1000, 200);
 	}
 
-	@SuppressWarnings("unchecked")
 	private void positionVertexAt(Object vertex, int x, int y) {
 		DefaultGraphCell cell = jgAdapter.getVertexCell(vertex);
 		AttributeMap attr = cell.getAttributes();
@@ -166,12 +182,9 @@ public class UserVisualization extends JFrame {
 	 */
 	private static class ListenableDirectedMultigraph<V, E> extends DefaultListenableGraph<V, E>
 			implements DirectedGraph<V, E> {
-		// private static final long serialVersionUID = 1L;
 
 		ListenableDirectedMultigraph(Class<E> edgeClass) {
 			super(new DirectedMultigraph<>(edgeClass));
 		}
 	}
 }
-
-// End JGraphAdapterDemo.java
