@@ -2,8 +2,12 @@ package br.imd.profile;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Map.Entry;
 
+import br.imd.filedata.Device;
 import br.imd.filedata.FileRead;
+import br.imd.filedata.HTTP;
+import br.imd.filedata.Logon;
 
 public class Main {
 
@@ -16,28 +20,38 @@ public class Main {
 	static final String LDAP_FILE = System.getProperty("user.dir") + "/files/ldap.csv";
 	static final String LOGON_FILE = System.getProperty("user.dir") + "/files/logon-reduced.csv";
 
-	/*
-	 * public void printProfile(String userID) { UserProfile userprofile =
-	 * Database.users.get(userID);
-	 * 
-	 * System.out.println("User Information:"); System.out.println("Name:" +
-	 * userprofile.getId()); System.out.println("Id:" + userprofile.getId());
-	 * System.out.println("Domain:" + userprofile.getDomain());
-	 * System.out.println("E-mail:" + userprofile.getEmail());
-	 * System.out.println("Role:" + userprofile.getRole());
-	 * 
-	 * System.out.println("Devices:" + userprofile.getId()); for (String pcKey :
-	 * userprofile.getDevices().keySet()) { System.out.println("Device Id:" +
-	 * pcKey); int i = 0; for (PC pcs : userprofile.getDevices().values()) {
-	 * System.out.println("Activity:" +
-	 * pcs.getDeviceActivity().get(i).getActivity());
-	 * System.out.println("Activity:" +
-	 * pcs.getLogonActivity().get(i).getActivity());
-	 * System.out.println("Activity:" +
-	 * pcs.getHttpActivity().get(i).getActivity());
-	 * System.out.println("Atributtes: " +
-	 * pcs.getHttpActivity().get(i).getUrl()); i++; } } }
-	 */
+	public void printProfile(String userID) {
+
+		UserProfile userprofile = Database.users.get(userID);
+
+		System.out.println("User Information:");
+		System.out.println("Name:" + userprofile.getEmployee_name());
+		System.out.println("Id:" + userprofile.getUser_id());
+		System.out.println("Domain:" + userprofile.getDomain());
+		System.out.println("E-mail:" + userprofile.getEmail());
+		System.out.println("Role:" + userprofile.getRole());
+
+		System.out.println("\nDevices for:" + userprofile.getEmployee_name());
+		for (String pcKey : userprofile.getDevices().keySet()) {
+			System.out.println("Device Id:" + pcKey);
+
+		}
+
+		for (Entry<String, PC> pc : userprofile.getDevices().entrySet()) {
+			System.out.println("\nDevice Activies for:" + pc.getKey());
+
+			for (Device device : pc.getValue().getDeviceActivity()) {
+				System.out.println("Activity: " + device.getActivity());
+			}
+			for (Logon logon : pc.getValue().getLogonActivity()) {
+				System.out.println("Activity: " + logon.getActivity());
+			}
+			for (HTTP http : pc.getValue().getHttpActivity()) {
+				System.out.println("Activity: " + http.getActivity() + " Atributte: " + http.getUrl());
+			}
+
+		}
+	}
 
 	public void readFiles() {
 		readerLDAP = new FileRead(LDAP_FILE);
@@ -57,9 +71,17 @@ public class Main {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String args[]) throws ParseException {
 		Main t = new Main();
 		t.readFiles();
-		// t.printProfile("RES0962");
+		t.printProfile("ACD0647");
+		// DateFilter date = new DateFilter();
+		//
+		// DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		// Date date1 = df.parse("01/04/2009 13:16:32");
+		// Date date2 = df.parse("01/06/2011 07:26:39");
+		//
+		// UserProfile user = date.chooseDate(date1, date2, "ACD0647");
+		// // date.printProfile(user);
 	}
 }

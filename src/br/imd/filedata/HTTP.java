@@ -21,7 +21,7 @@ public class HTTP extends Data {
 		this.user = user;
 		this.pc = pc;
 		this.url = url;
-		activity = "acessed";
+		activity = "Acessed";
 	}
 
 	public String getId() {

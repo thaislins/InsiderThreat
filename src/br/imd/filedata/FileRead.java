@@ -56,6 +56,10 @@ public class FileRead {
 		profile = new ProfileBuilder();
 	}
 
+	/*
+	 * Retorna um objeto de acordo com o tipo de arquivo que foi lido e insere
+	 * nele as informações da leitura
+	 */
 	public Data dataType(ArrayList<String> str) throws ParseException {
 		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		if (csvFile.equals(DEVICE_FILE))
@@ -69,6 +73,14 @@ public class FileRead {
 			return new Logon(str.get(0), df.parse(str.get(1)), str.get(2).replace("DTAA/", ""), str.get(3), str.get(4));
 	}
 
+	/*
+	 * Lê-se a primeira linha que contém somente os tipos de informação do
+	 * arquivo pois não serão guardados. Após isso cada linha é lida e
+	 * armazenada em um ArrayList que é substituído com novas informações a cada
+	 * linha. Inserem-se as informações do ArrayList em um novo objeto e após
+	 * isso esse objeto é inserido no HashMap "users" para criar os perfis de
+	 * usuários
+	 */
 	public void read() throws IOException, ParseException {
 		reader = new BufferedReader(new FileReader(csvFile));
 		String firstLine = reader.readLine();
@@ -80,9 +92,11 @@ public class FileRead {
 			fileInfo = new ArrayList<>(Arrays.asList(line.split(csvSplitBy)));
 			data = dataType(fileInfo);
 
+			// Verifica qual é o tipo de objeto e chama o método correspondente
+			// para adicionar ao HashMap de usuários
 			if (data instanceof LDAP)
 				profile.addToDatabase((LDAP) data);
-			if (data instanceof Device)
+			else if (data instanceof Device)
 				profile.addToDatabase((Device) data);
 			else if (data instanceof Logon)
 				profile.addToDatabase((Logon) data);

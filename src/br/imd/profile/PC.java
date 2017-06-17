@@ -8,17 +8,18 @@ import br.imd.filedata.Logon;
 
 public class PC {
 
-	private String device;
+	/*
+	 * Array para cada tipo de arquivo lido já que todos contém informação sobre
+	 * algum dispositivo (PC) e suas respectivas atividades e atributos
+	 */
 	private ArrayList<Device> deviceActivity;
-	private ArrayList<HTTP> httpActivity;
 	private ArrayList<Logon> logonActivity;
+	private ArrayList<HTTP> httpActivity;
 
-	public String getDevice() {
-		return device;
-	}
-
-	public void setDevice(String device) {
-		this.device = device;
+	public PC() {
+		deviceActivity = new ArrayList<>();
+		logonActivity = new ArrayList<>();
+		httpActivity = new ArrayList<>();
 	}
 
 	public ArrayList<Device> getDeviceActivity() {
