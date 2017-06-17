@@ -14,9 +14,9 @@ public class DateFilter {
 	 * pelo usário do programa, portanto filtra as informações já pertencentes
 	 * ness perfil para as datas selecionadas
 	 */
-	public UserProfile choosePeriod(Date date1, Date date2, String userID) {
+	public UserProfile choosePeriod(Date date1, Date date2, String userId) {
 
-		UserProfile user = Database.users.get(userID);
+		UserProfile user = Database.users.get(userId);
 		UserProfile userprofile = new UserProfile(user.getEmployee_name(), user.getUser_id(), user.getDomain(),
 				user.getEmail(), user.getRole());
 
