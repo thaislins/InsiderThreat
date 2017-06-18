@@ -22,6 +22,8 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -63,41 +65,31 @@ import br.imd.profile.UserProfile;
  * A demo applet that shows how to use JGraph to visualize JGraphT graphs.
  *
  * @author Barak Naveh
+ * @author Sara Souza
+ * @author Thais Lins
  * @since Aug 3, 2003
  */
 public class UserVisualization extends JFrame {
-	private JPanel p;
-	private JGraph jgraph;
-	private int frameSize;
 	private JGraphModelAdapter<String, DefaultEdge> jgAdapter;
+	private JGraph jgraph;
+	private JScrollPane scrollpane;
+	private JPanel p;
 	private JButton btnUserId;
 	private JButton btnReadLDAP;
 	private JButton btnReadFiles;
-	private JButton btnReadDevice;
-	private JButton btnReadLogon;
-	private JButton btnReadHttp;
 	private JButton btnChooseDate;
-	private JComboBox chooseFile;
-	private JComboBox dateType;
+	private JComboBox<String> chooseFile;
+	private JComboBox<String> dateType;
 	private JTextField txtUserId;
-	private JScrollPane scrollpane;
+	private Main t;
+	private int frameSize;
+	private String userId;
 	private Date date1;
 	private Date date2;
-	private Main t;
-	private String userId;
 
 	/**
-	 * An alternative starting point for this demo, to also allow running this
-	 * applet as an application.
-	 *
-	 * @param args
-	 *            ignored.
+	 * Construtor que define informações essenciais da interface gráfica
 	 */
-	public static void main(String[] args) {
-		UserVisualization frame = new UserVisualization();
-		frame.setVisible(true);
-	}
-
 	public UserVisualization() {
 		userId = "";
 		frameSize = 960;
@@ -109,6 +101,9 @@ public class UserVisualization extends JFrame {
 
 	}
 
+	/**
+	 * Função que inicializa a interface gráfica
+	 */
 	public void init() {
 		// Cria JPanel princiapal que será dividido em 2
 		JPanel main = new JPanel();
@@ -143,12 +138,20 @@ public class UserVisualization extends JFrame {
 				t.readLDAP();
 				System.out.println("User File Read");
 				p2.remove(btnReadLDAP);
-				addButtons(p2);
 				chooseDateType(p2);
+				p2.revalidate();
+				p2.repaint();
 			}
 		});
 	}
 
+	/**
+	 * Possibilita ao usuário a escolha de qua tipo de árvore será criada, uma
+	 * com todas as datas em que foram realizadas atividades ou somente em datas
+	 * escolhidas (filtragem) por ele
+	 * 
+	 * @param p2
+	 */
 	public void chooseDateType(JPanel p2) {
 		JLabel lblDateChoice = new JLabel("Choose Date Format");
 		dateType = new JComboBox();
@@ -171,12 +174,16 @@ public class UserVisualization extends JFrame {
 				String dateChoice = (String) dateType.getSelectedItem();
 
 				if (dateChoice.equals("All")) {
+					addButtons(p2);
 					chooseUserId(p2);
 					p2.remove(btnChooseDate);
 					p2.remove(lblDateChoice);
 					p2.remove(dateType);
 					p2.repaint();
 				} else {
+					JButton btnReadAll = new JButton("Read All");
+					btnReadAll.setBounds(100, 230, 120, 15);
+
 					chooseUserId(p2);
 					p2.remove(dateType);
 					p2.remove(btnChooseDate);
@@ -192,7 +199,18 @@ public class UserVisualization extends JFrame {
 					p2.add(txtDate1);
 					p2.add(txtDate2);
 					p2.add(btnFilteredDate);
+					p2.add(btnReadAll);
 					p2.repaint();
+
+					btnReadAll.addActionListener(new ActionListener() {
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							t.readFiles("Device");
+							t.readFiles("Logon");
+							t.readFiles("Http");
+							System.out.println("Read all files");
+						}
+					});
 
 					btnFilteredDate.addActionListener(new ActionListener() {
 
@@ -220,39 +238,11 @@ public class UserVisualization extends JFrame {
 		});
 	}
 
-	public void chooseUserId(JPanel p2) {
-		JLabel lblUserId = new JLabel("Choose User Id");
-		btnUserId = new JButton("Enter");
-		txtUserId = new JTextField();
-
-		txtUserId.setBounds(300, 200, 120, 15);
-		btnUserId.setBounds(300, 230, 120, 15);
-		lblUserId.setBounds(305, 170, 150, 24);
-
-		p2.add(btnUserId);
-		p2.add(txtUserId);
-		p2.add(lblUserId);
-
-		btnUserId.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Thread t = new Thread(new Runnable() {
-					@Override
-					public void run() {
-						userId = txtUserId.getText();
-						jgraph = createTree(userId);
-						p.removeAll();
-						p.add(jgraph);
-						txtUserId.setText("");
-						scrollpane.revalidate();
-						scrollpane.repaint();
-					}
-				});
-				t.start();
-			}
-		});
-	}
-
+	/**
+	 * Permite visualizar botão de leitura de arquivo na interface gráfica
+	 * 
+	 * @param p2
+	 */
 	public void addButtons(JPanel p2) {
 		chooseFile = new JComboBox();
 		chooseFile.addItem("Device");
@@ -292,6 +282,50 @@ public class UserVisualization extends JFrame {
 		});
 	}
 
+	/**
+	 * Permite ao usuário a capacidade de escolher um Id que será imprimido na
+	 * árvore
+	 * 
+	 * @param p2
+	 */
+	public void chooseUserId(JPanel p2) {
+		JLabel lblUserId = new JLabel("Choose User Id");
+		btnUserId = new JButton("Enter");
+		txtUserId = new JTextField();
+
+		txtUserId.setBounds(300, 200, 120, 15);
+		btnUserId.setBounds(300, 230, 120, 15);
+		lblUserId.setBounds(305, 170, 150, 24);
+
+		p2.add(btnUserId);
+		p2.add(txtUserId);
+		p2.add(lblUserId);
+
+		btnUserId.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Thread t = new Thread(new Runnable() {
+					@Override
+					public void run() {
+						userId = txtUserId.getText();
+						jgraph = createTree(userId);
+						p.removeAll();
+						p.add(jgraph);
+						txtUserId.setText("");
+						scrollpane.revalidate();
+						scrollpane.repaint();
+					}
+				});
+				t.start();
+			}
+		});
+	}
+
+	/**
+	 * Possibilita a criação de uma árvore com datas filtradas
+	 * 
+	 * @param p2
+	 */
 	public void createFilteredTree(JPanel p2) {
 
 		DateFilter df = new DateFilter();
@@ -303,13 +337,28 @@ public class UserVisualization extends JFrame {
 		p.repaint();
 	}
 
-	public JGraph createTree(String userID) {
+	/**
+	 * Cria uma árvore na interface gráfica de acordo com id inserido pelo
+	 * usuário (puxa informações do usuário da database por meio do seu id e vai
+	 * gerando vertíces a partir disso)
+	 * 
+	 * @param userId
+	 * @return jgraph
+	 */
+	public JGraph createTree(String userId) {
 
 		ListenableGraph<String, DefaultEdge> g = new ListenableDirectedGraph<>(DefaultEdge.class);
 		jgAdapter = new JGraphModelAdapter<>(g);
 		JGraph jgraph = new JGraph(jgAdapter);
 
-		UserProfile userprofile = Database.users.get(userID);
+		UserProfile userprofile = Database.users.get(userId);
+
+		try {
+			t.printProfile(userId);
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		if (userprofile.getUser_id().contains("f_")) {
 			userprofile.getUser_id().replace("f_", "");

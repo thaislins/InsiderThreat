@@ -1,18 +1,27 @@
 package br.imd.profile;
 
 import java.util.Date;
-import java.util.Map.Entry;
 
 import br.imd.filedata.Device;
 import br.imd.filedata.HTTP;
 import br.imd.filedata.Logon;
 
+/**
+ * Classe responsável pela filtragem da data de acorco com período estabelecido
+ * pelo usuário
+ */
 public class DateFilter {
 
-	/*
+	/**
 	 * Cria um perfil de usuário de acordo com um intervalo de tempo definido
 	 * pelo usário do programa, portanto filtra as informações já pertencentes
-	 * ness perfil para as datas selecionadas
+	 * ness perfil para as datas selecionadas e adiciona isso a database de
+	 * usuários com uma identificação de usuário
+	 * 
+	 * @param date1
+	 * @param date2
+	 * @param userId
+	 * @return userprofile
 	 */
 	public UserProfile choosePeriod(Date date1, Date date2, String userId) {
 
@@ -54,35 +63,4 @@ public class DateFilter {
 		return userprofile;
 	}
 
-	/*
-	 * Imprime perfil de usuário de acordo com um objeto de perfil e usuário
-	 */
-	public void printProfile(UserProfile userprofile) {
-		System.out.println("User Information:");
-		System.out.println("Name:" + userprofile.getEmployee_name());
-		System.out.println("Id:" + userprofile.getUser_id());
-		System.out.println("Domain:" + userprofile.getDomain());
-		System.out.println("E-mail:" + userprofile.getEmail());
-		System.out.println("Role:" + userprofile.getRole());
-
-		System.out.println("\nDevices for:" + userprofile.getUser_id());
-		for (String pcKey : userprofile.getDevices().keySet()) {
-			System.out.println("Device Id:" + pcKey);
-
-		}
-
-		for (Entry<String, PC> pc : userprofile.getDevices().entrySet()) {
-			System.out.println("\nDevice Activies for:" + pc.getKey());
-
-			for (Device device : pc.getValue().getDeviceActivity()) {
-				System.out.println("Activity: " + device.getActivity());
-			}
-			for (Logon logon : pc.getValue().getLogonActivity()) {
-				System.out.println("Activity: " + logon.getActivity());
-			}
-			for (HTTP http : pc.getValue().getHttpActivity()) {
-				System.out.println("Activity: " + http.getActivity() + " Atributte: " + http.getUrl());
-			}
-		}
-	}
 }

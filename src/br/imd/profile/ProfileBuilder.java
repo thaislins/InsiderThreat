@@ -5,12 +5,16 @@ import br.imd.filedata.HTTP;
 import br.imd.filedata.LDAP;
 import br.imd.filedata.Logon;
 
+/**
+ * Classe responsável pela criação dos perfis
+ */
 public class ProfileBuilder {
 
-	/*
+	/**
 	 * Adiciona informações lidas do arquivo LDAP ao HashMap "users" sendo a
 	 * chave o Id do usuário e o valor um objeto de Perfil de Usuário
 	 * 
+	 * @param ldap
 	 */
 	public void addToDatabase(LDAP ldap) {
 		UserProfile userprofile = new UserProfile(ldap.getEmployee_name(), ldap.getUser_id(), ldap.getDomain(),
@@ -18,12 +22,14 @@ public class ProfileBuilder {
 		Database.users.put(userprofile.getUser_id(), userprofile);
 	}
 
-	/*
+	/**
 	 * Verifica se o HashMap de usuários contém o usuário procurado de acordo
 	 * com a chave do Device. Caso exista pegam-se as informações acerca desse
 	 * perfil, após isso verifica se há um dispositivo com a chave procurada
 	 * dentro da estrutura e insere um novo despositivo constituído de
 	 * informações da atividade de Connected-Disconnected
+	 * 
+	 * @param device
 	 */
 	public void addToDatabase(Device device) {
 		if (Database.users.containsKey(device.getUser())) {
@@ -35,12 +41,14 @@ public class ProfileBuilder {
 		}
 	}
 
-	/*
+	/**
 	 * Verifica se o HashMap de usuários contém o usuário procurado de acordo
 	 * com a chave do Logon. Caso exista pegam-se as informações acerca desse
 	 * perfil, após isso verifica se há um dispositivo com a chave procurada
 	 * dentro da estrutura e insere um novo despositivo constituído de
 	 * informações da atividade de Logon-Logoff
+	 * 
+	 * @param logon
 	 */
 	public void addToDatabase(Logon logon) {
 		if (Database.users.containsKey(logon.getUser())) {
@@ -52,12 +60,14 @@ public class ProfileBuilder {
 		}
 	}
 
-	/*
+	/**
 	 * Verifica se o HashMap de usuários contém o usuário procurado de acordo
 	 * com a chave do HTTP. Caso exista pegam-se as informações acerca desse
 	 * perfil, após isso verifica se há um dispositivo com a chave procurada
 	 * dentro da estrutura e insere um novo despositivo constituído de
 	 * informações dos atributos (as urls acessadas) de HTTP
+	 * 
+	 * @param http
 	 */
 	public void addToDatabase(HTTP http) {
 		if (Database.users.containsKey(http.getUser())) {
