@@ -18,14 +18,12 @@ import br.imd.profile.ProfileBuilder;
 public class FileRead {
 
 	private HashMap<String, ArrayList<Data>> deviceInfo;
-	private ProfileBuilder profile;
 	private ArrayList<String> fileInfo;
 	private Data data;
 	private String csvFile;
 	private BufferedReader reader;
 	private String line;
 	private String csvSplitBy;
-	private String[] info;
 	static final String DEVICE_FILE = System.getProperty("user.dir") + "/files/device-reduced.csv";
 	static final String HTTP_FILE = System.getProperty("user.dir") + "/files/http-reduced.csv";
 	static final String LDAP_FILE = System.getProperty("user.dir") + "/files/ldap.csv";
@@ -69,9 +67,7 @@ public class FileRead {
 		reader = null;
 		line = null;
 		csvSplitBy = ",";
-		info = null;
 		data = null;
-		profile = new ProfileBuilder();
 	}
 
 	/**
@@ -105,7 +101,6 @@ public class FileRead {
 	public void read() throws IOException, ParseException {
 		reader = new BufferedReader(new FileReader(csvFile));
 		String firstLine = reader.readLine();
-		String key;
 
 		ProfileBuilder profile = new ProfileBuilder();
 		while ((line = reader.readLine()) != null) {

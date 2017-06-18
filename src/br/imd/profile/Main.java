@@ -34,7 +34,7 @@ public class Main {
 	 */
 	public void printProfile(String userId) throws FileNotFoundException, UnsupportedEncodingException {
 
-		PrintWriter writer = new PrintWriter(System.getProperty("user.dir") + "/users/" + userId + ".txt", "UTF-8");
+		writer = new PrintWriter(System.getProperty("user.dir") + "/users/" + userId + ".txt", "UTF-8");
 
 		UserProfile userprofile = Database.users.get(userId);
 

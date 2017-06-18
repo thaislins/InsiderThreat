@@ -1,0 +1,1149 @@
+Number of Suspected Users:164
+
+Name: Drew D Kerr
+Id: DDK0417
+Domain: dtaa.com
+E-mail: Drew.D.Kerr@dtaa.com
+Role: Administrative Staff
+Average activity count: 17.25
+
+Name: Hayley C Gilmore
+Id: HCG0731
+Domain: dtaa.com
+E-mail: Hayley.C.Gilmore@dtaa.com
+Role: Tradesman
+Average activity count: 27.541666666666668
+
+Name: Yvette C Velazquez
+Id: YCV0635
+Domain: dtaa.com
+E-mail: Yvette.C.Velazquez@dtaa.com
+Role: Tradesman
+Average activity count: 8.625
+
+Name: Heather I Bean
+Id: HIB0604
+Domain: dtaa.com
+E-mail: Heather.I.Bean@dtaa.com
+Role: Administrative Staff
+Average activity count: 11.041666666666666
+
+Name: Vaughan M Alford
+Id: VMA0051
+Domain: dtaa.com
+E-mail: Vaughan.M.Alford@dtaa.com
+Role: Engineer
+Average activity count: 16.5
+
+Name: Mercedes A Gross
+Id: MAG0290
+Domain: dtaa.com
+E-mail: Mercedes.A.Gross@dtaa.com
+Role: Engineer
+Average activity count: 11.0
+
+Name: Lael T Moses
+Id: LTM0418
+Domain: dtaa.com
+E-mail: Lael.T.Moses@dtaa.com
+Role: Tradesman
+Average activity count: 18.833333333333332
+
+Name: Sophia H Riddle
+Id: SHR0025
+Domain: dtaa.com
+E-mail: Sophia.H.Riddle@dtaa.com
+Role: Of Council
+Average activity count: 14.666666666666666
+
+Name: Jordan Z Oconnor
+Id: JZO0727
+Domain: dtaa.com
+E-mail: Jordan.Z.Oconnor@dtaa.com
+Role: Janitor
+Average activity count: 19.625
+
+Name: Reed V Savage
+Id: RVS0852
+Domain: dtaa.com
+E-mail: Reed.V.Savage@dtaa.com
+Role: Janitor
+Average activity count: 16.708333333333332
+
+Name: Mason Z Waller
+Id: MZW0111
+Domain: dtaa.com
+E-mail: Mason.Z.Waller@dtaa.com
+Role: Security
+Average activity count: 11.25
+
+Name: Armand J Bishop
+Id: AJB0370
+Domain: dtaa.com
+E-mail: Armand.J.Bishop@dtaa.com
+Role: Engineer
+Average activity count: 8.333333333333334
+
+Name: Drake B Booth
+Id: DBB0235
+Domain: dtaa.com
+E-mail: Drake.B.Booth@dtaa.com
+Role: Foreman
+Average activity count: 19.708333333333332
+
+Name: Daria B Fletcher
+Id: DBF0903
+Domain: dtaa.com
+E-mail: Daria.B.Fletcher@dtaa.com
+Role: Tradesman
+Average activity count: 13.75
+
+Name: Sylvester J Holloway
+Id: SJH0588
+Domain: dtaa.com
+E-mail: Sylvester.J.Holloway@dtaa.com
+Role: Foreman
+Average activity count: 25.416666666666668
+
+Name: Mona Q Lynch
+Id: MQL0135
+Domain: dtaa.com
+E-mail: Mona.Q.Lynch@dtaa.com
+Role: Administrative Staff
+Average activity count: 28.291666666666668
+
+Name: Jonah L Lancaster
+Id: JLL0301
+Domain: dtaa.com
+E-mail: Jonah.L.Lancaster@dtaa.com
+Role: Engineer
+Average activity count: 12.541666666666666
+
+Name: Lane R Hood
+Id: LRH0747
+Domain: dtaa.com
+E-mail: Lane.R.Hood@dtaa.com
+Role: Project Manager
+Average activity count: 13.5
+
+Name: Edward B Pace
+Id: EBP0037
+Domain: dtaa.com
+E-mail: Edward.B.Pace@dtaa.com
+Role: Technician
+Average activity count: 19.625
+
+Name: Graiden N Hogan
+Id: GNH0394
+Domain: dtaa.com
+E-mail: Graiden.N.Hogan@dtaa.com
+Role: Janitor
+Average activity count: 13.5
+
+Name: Hedy S Dodson
+Id: HSD0519
+Domain: dtaa.com
+E-mail: Hedy.S.Dodson@dtaa.com
+Role: Tradesman
+Average activity count: 10.833333333333334
+
+Name: Vincent K Baker
+Id: VKB0605
+Domain: dtaa.com
+E-mail: Vincent.K.Baker@dtaa.com
+Role: Foreman
+Average activity count: 5.666666666666667
+
+Name: Chiquita A Conway
+Id: CAC0854
+Domain: dtaa.com
+E-mail: Chiquita.A.Conway@dtaa.com
+Role: Tradesman
+Average activity count: 21.666666666666668
+
+Name: Camden C Blankenship
+Id: CCB0496
+Domain: dtaa.com
+E-mail: Camden.C.Blankenship@dtaa.com
+Role: Foreman
+Average activity count: 16.625
+
+Name: Aidan G Wallace
+Id: AGW0182
+Domain: dtaa.com
+E-mail: Aidan.G.Wallace@dtaa.com
+Role: Administrative Assistant
+Average activity count: 14.958333333333334
+
+Name: Adele Q Griffith
+Id: AQG0678
+Domain: dtaa.com
+E-mail: Adele.Q.Griffith@dtaa.com
+Role: Technician
+Average activity count: 9.041666666666666
+
+Name: Eleanor L Alvarez
+Id: ELA0741
+Domain: dtaa.com
+E-mail: Eleanor.L.Alvarez@dtaa.com
+Role: Tradesman
+Average activity count: 7.833333333333333
+
+Name: Xavier K Rich
+Id: XKR0971
+Domain: dtaa.com
+E-mail: Xavier.K.Rich@dtaa.com
+Role: Security
+Average activity count: 16.166666666666668
+
+Name: Clinton S Cash
+Id: CSC0297
+Domain: dtaa.com
+E-mail: Clinton.S.Cash@dtaa.com
+Role: Senior Manger
+Average activity count: 19.333333333333332
+
+Name: Omar D Weaver
+Id: ODW0839
+Domain: dtaa.com
+E-mail: Omar.D.Weaver@dtaa.com
+Role: Project Manager
+Average activity count: 10.666666666666666
+
+Name: Hanae D Rivas
+Id: HDR0261
+Domain: dtaa.com
+E-mail: Hanae.D.Rivas@dtaa.com
+Role: Technician
+Average activity count: 16.833333333333332
+
+Name: Kathleen K Walter
+Id: KKW0945
+Domain: dtaa.com
+E-mail: Kathleen.K.Walter@dtaa.com
+Role: Tradesman
+Average activity count: 5.916666666666667
+
+Name: Gray R Graham
+Id: GRG0693
+Domain: dtaa.com
+E-mail: Gray.R.Graham@dtaa.com
+Role: Project Manager
+Average activity count: 13.0
+
+Name: Aurelia I Burns
+Id: AIB0797
+Domain: dtaa.com
+E-mail: Aurelia.I.Burns@dtaa.com
+Role: Administrative Staff
+Average activity count: 8.375
+
+Name: Phyllis I Phillips
+Id: PIP0746
+Domain: dtaa.com
+E-mail: Phyllis.I.Phillips@dtaa.com
+Role: Tradesman
+Average activity count: 21.583333333333332
+
+Name: Christen H Atkins
+Id: CHA0174
+Domain: dtaa.com
+E-mail: Christen.H.Atkins@dtaa.com
+Role: Administrative Staff
+Average activity count: 27.291666666666668
+
+Name: Hayes B Little
+Id: HBL0517
+Domain: dtaa.com
+E-mail: Hayes.B.Little@dtaa.com
+Role: Director
+Average activity count: 22.166666666666668
+
+Name: Courtney A Wright
+Id: CAW0976
+Domain: dtaa.com
+E-mail: Courtney.A.Wright@dtaa.com
+Role: Tradesman
+Average activity count: 8.791666666666666
+
+Name: Samuel E Frye
+Id: SEF0446
+Domain: dtaa.com
+E-mail: Samuel.E.Frye@dtaa.com
+Role: Technician
+Average activity count: 10.541666666666666
+
+Name: Quinn K Robbins
+Id: QKR0651
+Domain: dtaa.com
+E-mail: Quinn.K.Robbins@dtaa.com
+Role: Engineer
+Average activity count: 19.375
+
+Name: Melinda M Houston
+Id: MMH0612
+Domain: dtaa.com
+E-mail: Melinda.M.Houston@dtaa.com
+Role: Tradesman
+Average activity count: 21.75
+
+Name: Beck P Cherry
+Id: BPC0533
+Domain: dtaa.com
+E-mail: Beck.P.Cherry@dtaa.com
+Role: Janitor
+Average activity count: 13.916666666666666
+
+Name: Shea A Hodge
+Id: SAH0192
+Domain: dtaa.com
+E-mail: Shea.A.Hodge@dtaa.com
+Role: Engineer
+Average activity count: 18.041666666666668
+
+Name: Carter G Martinez
+Id: CGM0343
+Domain: dtaa.com
+E-mail: Carter.G.Martinez@dtaa.com
+Role: Engineer
+Average activity count: 10.583333333333334
+
+Name: Kim G Spencer
+Id: KGS0398
+Domain: dtaa.com
+E-mail: Kim.G.Spencer@dtaa.com
+Role: Tradesman
+Average activity count: 5.708333333333333
+
+Name: Lars P Gillespie
+Id: LPG0099
+Domain: dtaa.com
+E-mail: Lars.P.Gillespie@dtaa.com
+Role: Security
+Average activity count: 19.583333333333332
+
+Name: Dorothy A Vasquez
+Id: DAV0579
+Domain: dtaa.com
+E-mail: Dorothy.A.Vasquez@dtaa.com
+Role: Tradesman
+Average activity count: 27.208333333333332
+
+Name: Martha C Melendez
+Id: MCM0346
+Domain: dtaa.com
+E-mail: Martha.C.Melendez@dtaa.com
+Role: Administrative Staff
+Average activity count: 19.5
+
+Name: Carlos O Shannon
+Id: COS0121
+Domain: dtaa.com
+E-mail: Carlos.O.Shannon@dtaa.com
+Role: Project Manager
+Average activity count: 9.333333333333334
+
+Name: Fiona D Patterson
+Id: FDP0500
+Domain: dtaa.com
+E-mail: Fiona.D.Patterson@dtaa.com
+Role: Administrative Staff
+Average activity count: 19.25
+
+Name: Robert H Pate
+Id: RHP0688
+Domain: dtaa.com
+E-mail: Robert.H.Pate@dtaa.com
+Role: Administrative Assistant
+Average activity count: 18.791666666666668
+
+Name: Fulton K Rojas
+Id: FKR0550
+Domain: dtaa.com
+E-mail: Fulton.K.Rojas@dtaa.com
+Role: Senior Manger
+Average activity count: 12.208333333333334
+
+Name: Avye R Richard
+Id: ARR0977
+Domain: dtaa.com
+E-mail: Avye.R.Richard@dtaa.com
+Role: Administrative Staff
+Average activity count: 10.916666666666666
+
+Name: Wyoming J Gill
+Id: WJG0153
+Domain: dtaa.com
+E-mail: Wyoming.J.Gill@dtaa.com
+Role: Technician
+Average activity count: 7.875
+
+Name: Macey A Barker
+Id: MAB0532
+Domain: dtaa.com
+E-mail: Macey.A.Barker@dtaa.com
+Role: Technician
+Average activity count: 5.708333333333333
+
+Name: Blaze A Faulkner
+Id: BAF0379
+Domain: dtaa.com
+E-mail: Blaze.A.Faulkner@dtaa.com
+Role: Engineer
+Average activity count: 12.75
+
+Name: Arsenio B Baldwin
+Id: ABB0272
+Domain: dtaa.com
+E-mail: Arsenio.B.Baldwin@dtaa.com
+Role: Loading Dock
+Average activity count: 27.75
+
+Name: Vivian C Gould
+Id: VCG0663
+Domain: dtaa.com
+E-mail: Vivian.C.Gould@dtaa.com
+Role: Administrative Staff
+Average activity count: 14.125
+
+Name: Plato U Horn
+Id: PUH0847
+Domain: dtaa.com
+E-mail: Plato.U.Horn@dtaa.com
+Role: Director
+Average activity count: 10.833333333333334
+
+Name: Kendall S Barton
+Id: KSB0673
+Domain: dtaa.com
+E-mail: Kendall.S.Barton@dtaa.com
+Role: Tradesman
+Average activity count: 21.666666666666668
+
+Name: Zorita K Hopper
+Id: ZKH0388
+Domain: dtaa.com
+E-mail: Zorita.K.Hopper@dtaa.com
+Role: Technician
+Average activity count: 11.25
+
+Name: Thomas L Bush
+Id: TLB0017
+Domain: dtaa.com
+E-mail: Thomas.L.Bush@dtaa.com
+Role: Administrative Staff
+Average activity count: 13.208333333333334
+
+Name: Alma F Harvey
+Id: AFH0331
+Domain: dtaa.com
+E-mail: Alma.F.Harvey@dtaa.com
+Role: Tradesman
+Average activity count: 22.125
+
+Name: Farrah U Aguilar
+Id: FUA0154
+Domain: dtaa.com
+E-mail: Farrah.U.Aguilar@dtaa.com
+Role: Administrative Staff
+Average activity count: 5.541666666666667
+
+Name: Echo S Battle
+Id: ESB0080
+Domain: dtaa.com
+E-mail: Echo.S.Battle@dtaa.com
+Role: Technician
+Average activity count: 16.791666666666668
+
+Name: Isaiah R Chen
+Id: IRC0991
+Domain: dtaa.com
+E-mail: Isaiah.R.Chen@dtaa.com
+Role: IT Admin
+Average activity count: 13.541666666666666
+
+Name: Jonathan B Schroeder
+Id: JBS0483
+Domain: dtaa.com
+E-mail: Jonathan.B.Schroeder@dtaa.com
+Role: Technician
+Average activity count: 8.458333333333334
+
+Name: Rose B Cantu
+Id: RBC0879
+Domain: dtaa.com
+E-mail: Rose.B.Cantu@dtaa.com
+Role: Administrative Staff
+Average activity count: 25.75
+
+Name: Xander Q Winters
+Id: XQW0354
+Domain: dtaa.com
+E-mail: Xander.Q.Winters@dtaa.com
+Role: Senior Manger
+Average activity count: 14.208333333333334
+
+Name: Danielle C Casey
+Id: DCC0600
+Domain: dtaa.com
+E-mail: Danielle.C.Casey@dtaa.com
+Role: Technician
+Average activity count: 6.041666666666667
+
+Name: Chantale V Williams
+Id: CVW0133
+Domain: dtaa.com
+E-mail: Chantale.V.Williams@dtaa.com
+Role: Engineer
+Average activity count: 8.666666666666666
+
+Name: Thomas A Olsen
+Id: TAO0639
+Domain: dtaa.com
+E-mail: Thomas.A.Olsen@dtaa.com
+Role: Janitor
+Average activity count: 10.583333333333334
+
+Name: Troy N Beard
+Id: TNB0740
+Domain: dtaa.com
+E-mail: Troy.N.Beard@dtaa.com
+Role: Project Manager
+Average activity count: 16.333333333333332
+
+Name: Alexander F Rodgers
+Id: AFR0646
+Domain: dtaa.com
+E-mail: Alexander.F.Rodgers@dtaa.com
+Role: Engineer
+Average activity count: 19.5
+
+Name: Breanna Y Burton
+Id: BYB0347
+Domain: dtaa.com
+E-mail: Breanna.Y.Burton@dtaa.com
+Role: Tradesman
+Average activity count: 5.666666666666667
+
+Name: Harriet N Farmer
+Id: HNF0812
+Domain: dtaa.com
+E-mail: Harriet.N.Farmer@dtaa.com
+Role: Administrative Staff
+Average activity count: 7.0
+
+Name: Ahmed R Koch
+Id: ARK0026
+Domain: dtaa.com
+E-mail: Ahmed.R.Koch@dtaa.com
+Role: Technician
+Average activity count: 19.25
+
+Name: Hope K Mueller
+Id: HKM0260
+Domain: dtaa.com
+E-mail: Hope.K.Mueller@dtaa.com
+Role: Technician
+Average activity count: 10.541666666666666
+
+Name: Owen J Hale
+Id: OJH0425
+Domain: dtaa.com
+E-mail: Owen.J.Hale@dtaa.com
+Role: Engineer
+Average activity count: 21.916666666666668
+
+Name: Hillary S Rocha
+Id: HSR0472
+Domain: dtaa.com
+E-mail: Hillary.S.Rocha@dtaa.com
+Role: Administrative Staff
+Average activity count: 21.958333333333332
+
+Name: Wayne O Tyson
+Id: WOT0549
+Domain: dtaa.com
+E-mail: Wayne.O.Tyson@dtaa.com
+Role: Security
+Average activity count: 14.291666666666666
+
+Name: Hillary T Chambers
+Id: HTC0607
+Domain: dtaa.com
+E-mail: Hillary.T.Chambers@dtaa.com
+Role: Administrative Staff
+Average activity count: 19.5
+
+Name: Lucy B Bell
+Id: LBB0095
+Domain: dtaa.com
+E-mail: Lucy.B.Bell@dtaa.com
+Role: Administrative Staff
+Average activity count: 8.375
+
+Name: Lacey C Kelly
+Id: LCK0666
+Domain: dtaa.com
+E-mail: Lacey.C.Kelly@dtaa.com
+Role: Technician
+Average activity count: 21.708333333333332
+
+Name: Nero D Stephens
+Id: NDS0490
+Domain: dtaa.com
+E-mail: Nero.D.Stephens@dtaa.com
+Role: Project Manager
+Average activity count: 10.625
+
+Name: Julie M Santana
+Id: JMS0793
+Domain: dtaa.com
+E-mail: Julie.M.Santana@dtaa.com
+Role: Administrative Staff
+Average activity count: 27.291666666666668
+
+Name: Rylee C Wagner
+Id: RCW0436
+Domain: dtaa.com
+E-mail: Rylee.C.Wagner@dtaa.com
+Role: Tradesman
+Average activity count: 7.958333333333333
+
+Name: Josephine S Brewer
+Id: JSB0493
+Domain: dtaa.com
+E-mail: Josephine.S.Brewer@dtaa.com
+Role: Tradesman
+Average activity count: 18.583333333333332
+
+Name: Brent C Johnson
+Id: BCJ0800
+Domain: dtaa.com
+E-mail: Brent.C.Johnson@dtaa.com
+Role: Engineer
+Average activity count: 14.291666666666666
+
+Name: Yeo C Bennett
+Id: YCB0005
+Domain: dtaa.com
+E-mail: Yeo.C.Bennett@dtaa.com
+Role: Engineer
+Average activity count: 27.375
+
+Name: Bradley G Frost
+Id: BGF0236
+Domain: dtaa.com
+E-mail: Bradley.G.Frost@dtaa.com
+Role: Tradesman
+Average activity count: 24.833333333333332
+
+Name: Aiko F Newton
+Id: AFN0918
+Domain: dtaa.com
+E-mail: Aiko.F.Newton@dtaa.com
+Role: Technician
+Average activity count: 17.083333333333332
+
+Name: Gary H Campbell
+Id: GHC0041
+Domain: dtaa.com
+E-mail: Gary.H.Campbell@dtaa.com
+Role: Administrative Assistant
+Average activity count: 13.458333333333334
+
+Name: Larissa J Randall
+Id: LJR0772
+Domain: dtaa.com
+E-mail: Larissa.J.Randall@dtaa.com
+Role: Tradesman
+Average activity count: 8.083333333333334
+
+Name: Graham R Salas
+Id: GRS0372
+Domain: dtaa.com
+E-mail: Graham.R.Salas@dtaa.com
+Role: Engineer
+Average activity count: 11.416666666666666
+
+Name: Aurora J Avila
+Id: AJA0220
+Domain: dtaa.com
+E-mail: Aurora.J.Avila@dtaa.com
+Role: Engineer
+Average activity count: 13.458333333333334
+
+Name: Arden J Burris
+Id: AJB0016
+Domain: dtaa.com
+E-mail: Arden.J.Burris@dtaa.com
+Role: Administrative Assistant
+Average activity count: 24.75
+
+Name: Maite M Fuentes
+Id: MMF0289
+Domain: dtaa.com
+E-mail: Maite.M.Fuentes@dtaa.com
+Role: Of Council
+Average activity count: 27.333333333333332
+
+Name: Victor N Morrow
+Id: VNM0127
+Domain: dtaa.com
+E-mail: Victor.N.Morrow@dtaa.com
+Role: Engineer
+Average activity count: 12.416666666666666
+
+Name: Juliet S Warner
+Id: JSW0180
+Domain: dtaa.com
+E-mail: Juliet.S.Warner@dtaa.com
+Role: Administrative Staff
+Average activity count: 8.708333333333334
+
+Name: Freya F Prince
+Id: FFP0721
+Domain: dtaa.com
+E-mail: Freya.F.Prince@dtaa.com
+Role: Administrative Assistant
+Average activity count: 10.375
+
+Name: Carolyn H Mckee
+Id: CHM0645
+Domain: dtaa.com
+E-mail: Carolyn.H.Mckee@dtaa.com
+Role: Technician
+Average activity count: 10.875
+
+Name: Alana J Curry
+Id: AJC0266
+Domain: dtaa.com
+E-mail: Alana.J.Curry@dtaa.com
+Role: Tradesman
+Average activity count: 24.75
+
+Name: Wallace D Williamson
+Id: WDW0485
+Domain: dtaa.com
+E-mail: Wallace.D.Williamson@dtaa.com
+Role: Administrative Assistant
+Average activity count: 24.833333333333332
+
+Name: Stacy D Conrad
+Id: SDC0032
+Domain: dtaa.com
+E-mail: Stacy.D.Conrad@dtaa.com
+Role: Technician
+Average activity count: 16.625
+
+Name: Mariam I Casey
+Id: MIC0914
+Domain: dtaa.com
+E-mail: Mariam.I.Casey@dtaa.com
+Role: Tradesman
+Average activity count: 20.666666666666668
+
+Name: Sybil O Mckee
+Id: SOM0478
+Domain: dtaa.com
+E-mail: Sybil.O.Mckee@dtaa.com
+Role: Engineer
+Average activity count: 8.208333333333334
+
+Name: Riley M Estrada
+Id: RME0699
+Domain: dtaa.com
+E-mail: Riley.M.Estrada@dtaa.com
+Role: Technician
+Average activity count: 21.625
+
+Name: Mechelle I Koch
+Id: MIK0034
+Domain: dtaa.com
+E-mail: Mechelle.I.Koch@dtaa.com
+Role: Administrative Staff
+Average activity count: 21.875
+
+Name: Nichole S Contreras
+Id: NSC0842
+Domain: dtaa.com
+E-mail: Nichole.S.Contreras@dtaa.com
+Role: Technician
+Average activity count: 8.125
+
+Name: George S Leon
+Id: GSL0697
+Domain: dtaa.com
+E-mail: George.S.Leon@dtaa.com
+Role: Administrative Assistant
+Average activity count: 16.583333333333332
+
+Name: Aimee Z Christian
+Id: AZC0030
+Domain: dtaa.com
+E-mail: Aimee.Z.Christian@dtaa.com
+Role: Technician
+Average activity count: 10.916666666666666
+
+Name: Wallace C Nolan
+Id: WCN0570
+Domain: dtaa.com
+E-mail: Wallace.C.Nolan@dtaa.com
+Role: Engineer
+Average activity count: 8.375
+
+Name: Emmanuel D Harper
+Id: EDH0146
+Domain: dtaa.com
+E-mail: Emmanuel.D.Harper@dtaa.com
+Role: Loading Dock
+Average activity count: 16.291666666666668
+
+Name: Caleb D Zamora
+Id: CDZ0056
+Domain: dtaa.com
+E-mail: Caleb.D.Zamora@dtaa.com
+Role: Administrative Assistant
+Average activity count: 6.708333333333333
+
+Name: Dalton F Ward
+Id: DFW0798
+Domain: dtaa.com
+E-mail: Dalton.F.Ward@dtaa.com
+Role: Engineer
+Average activity count: 19.083333333333332
+
+Name: Pearl S Perry
+Id: PSP0555
+Domain: dtaa.com
+E-mail: Pearl.S.Perry@dtaa.com
+Role: Tradesman
+Average activity count: 11.208333333333334
+
+Name: Jamalia L Carter
+Id: JLC0744
+Domain: dtaa.com
+E-mail: Jamalia.L.Carter@dtaa.com
+Role: Tradesman
+Average activity count: 10.5
+
+Name: Jane C Stark
+Id: JCS0873
+Domain: dtaa.com
+E-mail: Jane.C.Stark@dtaa.com
+Role: Technician
+Average activity count: 11.333333333333334
+
+Name: Elaine R Potts
+Id: ERP0254
+Domain: dtaa.com
+E-mail: Elaine.R.Potts@dtaa.com
+Role: Tradesman
+Average activity count: 8.458333333333334
+
+Name: Kiayada L Singleton
+Id: KLS0717
+Domain: dtaa.com
+E-mail: Kiayada.L.Singleton@dtaa.com
+Role: Administrative Staff
+Average activity count: 5.541666666666667
+
+Name: Moses J Miller
+Id: MJM0228
+Domain: dtaa.com
+E-mail: Moses.J.Miller@dtaa.com
+Role: Foreman
+Average activity count: 10.958333333333334
+
+Name: Melissa J Mcmillan
+Id: MJM0469
+Domain: dtaa.com
+E-mail: Melissa.J.Mcmillan@dtaa.com
+Role: Tradesman
+Average activity count: 27.625
+
+Name: Ainsley R Mcpherson
+Id: ARM0416
+Domain: dtaa.com
+E-mail: Ainsley.R.Mcpherson@dtaa.com
+Role: Administrative Staff
+Average activity count: 14.5
+
+Name: Cara C Goodman
+Id: CCG0876
+Domain: dtaa.com
+E-mail: Cara.C.Goodman@dtaa.com
+Role: Technician
+Average activity count: 13.625
+
+Name: Lael I Delgado
+Id: LID0942
+Domain: dtaa.com
+E-mail: Lael.I.Delgado@dtaa.com
+Role: Of Council
+Average activity count: 10.833333333333334
+
+Name: Shelby T Fry
+Id: STF0145
+Domain: dtaa.com
+E-mail: Shelby.T.Fry@dtaa.com
+Role: Tradesman
+Average activity count: 11.291666666666666
+
+Name: Ocean Y Rojas
+Id: OYR0801
+Domain: dtaa.com
+E-mail: Ocean.Y.Rojas@dtaa.com
+Role: Technician
+Average activity count: 26.958333333333332
+
+Name: Chadwick P Perry
+Id: CPP0761
+Domain: dtaa.com
+E-mail: Chadwick.P.Perry@dtaa.com
+Role: Engineer
+Average activity count: 13.833333333333334
+
+Name: Luke C Gomez
+Id: LCG0546
+Domain: dtaa.com
+E-mail: Luke.C.Gomez@dtaa.com
+Role: Janitor
+Average activity count: 14.083333333333334
+
+Name: Justin N French
+Id: JNF0543
+Domain: dtaa.com
+E-mail: Justin.N.French@dtaa.com
+Role: Loading Dock
+Average activity count: 16.916666666666668
+
+Name: Alfonso M Atkinson
+Id: AMA0191
+Domain: dtaa.com
+E-mail: Alfonso.M.Atkinson@dtaa.com
+Role: Security
+Average activity count: 28.375
+
+Name: Benjamin J Caldwell
+Id: BJC0569
+Domain: dtaa.com
+E-mail: Benjamin.J.Caldwell@dtaa.com
+Role: Loading Dock
+Average activity count: 18.666666666666668
+
+Name: Adria T Jacobs
+Id: ATJ0284
+Domain: dtaa.com
+E-mail: Adria.T.Jacobs@dtaa.com
+Role: Tradesman
+Average activity count: 22.125
+
+Name: Cleo T Hull
+Id: CTH0856
+Domain: dtaa.com
+E-mail: Cleo.T.Hull@dtaa.com
+Role: Technician
+Average activity count: 11.0
+
+Name: Kenneth K Walls
+Id: KKW0676
+Domain: dtaa.com
+E-mail: Kenneth.K.Walls@dtaa.com
+Role: Engineer
+Average activity count: 24.5
+
+Name: Jolie A Mann
+Id: JAM0392
+Domain: dtaa.com
+E-mail: Jolie.A.Mann@dtaa.com
+Role: Administrative Staff
+Average activity count: 22.041666666666668
+
+Name: Neil H Lambert
+Id: NHL0521
+Domain: dtaa.com
+E-mail: Neil.H.Lambert@dtaa.com
+Role: Director
+Average activity count: 5.541666666666667
+
+Name: Melissa X Meadows
+Id: MXM0838
+Domain: dtaa.com
+E-mail: Melissa.X.Meadows@dtaa.com
+Role: Engineer
+Average activity count: 19.125
+
+Name: Eden M Zimmerman
+Id: EMZ0196
+Domain: dtaa.com
+E-mail: Eden.M.Zimmerman@dtaa.com
+Role: Tradesman
+Average activity count: 13.333333333333334
+
+Name: Joan L Mccarty
+Id: JLM0053
+Domain: dtaa.com
+E-mail: Joan.L.Mccarty@dtaa.com
+Role: Administrative Staff
+Average activity count: 26.041666666666668
+
+Name: Savannah C Wyatt
+Id: SCW0707
+Domain: dtaa.com
+E-mail: Savannah.C.Wyatt@dtaa.com
+Role: Technician
+Average activity count: 21.5
+
+Name: Jeremy J Ramos
+Id: JJR0278
+Domain: dtaa.com
+E-mail: Jeremy.J.Ramos@dtaa.com
+Role: Engineer
+Average activity count: 16.916666666666668
+
+Name: Raja E Sutton
+Id: RES0962
+Domain: dtaa.com
+E-mail: Raja.E.Sutton@dtaa.com
+Role: Senior Manger
+Average activity count: 16.541666666666668
+
+Name: Erich C Maynard
+Id: ECM0214
+Domain: dtaa.com
+E-mail: Erich.C.Maynard@dtaa.com
+Role: Technician
+Average activity count: 5.958333333333333
+
+Name: Prescott X Benton
+Id: PXB0069
+Domain: dtaa.com
+E-mail: Prescott.X.Benton@dtaa.com
+Role: Administrative Staff
+Average activity count: 24.791666666666668
+
+Name: Stephen L Copeland
+Id: SLC0778
+Domain: dtaa.com
+E-mail: Stephen.L.Copeland@dtaa.com
+Role: Engineer
+Average activity count: 27.458333333333332
+
+Name: MacKensie V Walker
+Id: MVW0630
+Domain: dtaa.com
+E-mail: MacKensie.V.Walker@dtaa.com
+Role: Tradesman
+Average activity count: 27.333333333333332
+
+Name: Channing J Whitley
+Id: CJW0317
+Domain: dtaa.com
+E-mail: Channing.J.Whitley@dtaa.com
+Role: VP
+Average activity count: 21.583333333333332
+
+Name: Yardley Q Woods
+Id: YQW0689
+Domain: dtaa.com
+E-mail: Yardley.Q.Woods@dtaa.com
+Role: Foreman
+Average activity count: 11.041666666666666
+
+Name: Guy K Jenkins
+Id: GKJ0573
+Domain: dtaa.com
+E-mail: Guy.K.Jenkins@dtaa.com
+Role: VP
+Average activity count: 8.041666666666666
+
+Name: Honorato D Rollins
+Id: HDR0823
+Domain: dtaa.com
+E-mail: Honorato.D.Rollins@dtaa.com
+Role: Administrative Staff
+Average activity count: 11.208333333333334
+
+Name: Ivan K Hatfield
+Id: IKH0904
+Domain: dtaa.com
+E-mail: Ivan.K.Hatfield@dtaa.com
+Role: Engineer
+Average activity count: 26.708333333333332
+
+Name: Vanna F Pate
+Id: VFP0669
+Domain: dtaa.com
+E-mail: Vanna.F.Pate@dtaa.com
+Role: Tradesman
+Average activity count: 15.833333333333334
+
+Name: Arsenio C Hoover
+Id: ACH0803
+Domain: dtaa.com
+E-mail: Arsenio.C.Hoover@dtaa.com
+Role: Administrative Assistant
+Average activity count: 21.625
+
+Name: Garrison V Hart
+Id: GVH0277
+Domain: dtaa.com
+E-mail: Garrison.V.Hart@dtaa.com
+Role: Janitor
+Average activity count: 11.083333333333334
+
+Name: Daryl I Spears
+Id: DIS0382
+Domain: dtaa.com
+E-mail: Daryl.I.Spears@dtaa.com
+Role: Technician
+Average activity count: 25.875
+
+Name: Nasim S Phillips
+Id: NSP0910
+Domain: dtaa.com
+E-mail: Nasim.S.Phillips@dtaa.com
+Role: Administrative Staff
+Average activity count: 24.875
+
+Name: Susan P Kennedy
+Id: SPK0818
+Domain: dtaa.com
+E-mail: Susan.P.Kennedy@dtaa.com
+Role: Technician
+Average activity count: 21.583333333333332
+
+Name: Shea K Wallace
+Id: SKW0871
+Domain: dtaa.com
+E-mail: Shea.K.Wallace@dtaa.com
+Role: Tradesman
+Average activity count: 22.041666666666668
+
+Name: Cathleen Y Knox
+Id: CYK0330
+Domain: dtaa.com
+E-mail: Cathleen.Y.Knox@dtaa.com
+Role: Tradesman
+Average activity count: 8.416666666666666
+
+Name: William M Joyner
+Id: WMJ0364
+Domain: dtaa.com
+E-mail: William.M.Joyner@dtaa.com
+Role: Technician
+Average activity count: 16.5
+
+Name: Nola N Burton
+Id: NNB0443
+Domain: dtaa.com
+E-mail: Nola.N.Burton@dtaa.com
+Role: Engineer
+Average activity count: 27.375
+
+Name: Sierra J Allison
+Id: SJA0691
+Domain: dtaa.com
+E-mail: Sierra.J.Allison@dtaa.com
+Role: Tradesman
+Average activity count: 10.791666666666666

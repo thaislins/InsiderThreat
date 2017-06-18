@@ -52,6 +52,7 @@ import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.DirectedMultigraph;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
+import br.imd.exception.UserNotFoundException;
 import br.imd.filedata.Device;
 import br.imd.filedata.HTTP;
 import br.imd.filedata.Logon;
@@ -65,11 +66,13 @@ import br.imd.profile.UserProfile;
  * A demo applet that shows how to use JGraph to visualize JGraphT graphs.
  *
  * @author Barak Naveh
- * @author Sara Souza
- * @author Thais Lins
  * @since Aug 3, 2003
  */
 public class UserVisualization extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JGraphModelAdapter<String, DefaultEdge> jgAdapter;
 	private JGraph jgraph;
 	private JScrollPane scrollpane;
@@ -154,7 +157,7 @@ public class UserVisualization extends JFrame {
 	 */
 	public void chooseDateType(JPanel p2) {
 		JLabel lblDateChoice = new JLabel("Choose Date Format");
-		dateType = new JComboBox();
+		dateType = new JComboBox<String>();
 		btnChooseDate = new JButton("Enter");
 
 		dateType.setBounds(500, 200, 120, 24);
@@ -216,7 +219,6 @@ public class UserVisualization extends JFrame {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							DateFilter filter = new DateFilter();
 							DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 							userId = txtUserId.getText();
 							txtUserId.setText("");
@@ -224,12 +226,11 @@ public class UserVisualization extends JFrame {
 							try {
 								date1 = df.parse(txtDate1.getText());
 								date2 = df.parse(txtDate2.getText());
+								createFilteredTree(p2);
 							} catch (ParseException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
+								System.out.println("Unable to parse value");
 							}
 
-							createFilteredTree(p2);
 						}
 					});
 				}
@@ -244,7 +245,7 @@ public class UserVisualization extends JFrame {
 	 * @param p2
 	 */
 	public void addButtons(JPanel p2) {
-		chooseFile = new JComboBox();
+		chooseFile = new JComboBox<String>();
 		chooseFile.addItem("Device");
 		chooseFile.addItem("Logon");
 		chooseFile.addItem("Http");
@@ -268,7 +269,11 @@ public class UserVisualization extends JFrame {
 				if (!userId.equals("")) {
 					Thread t = new Thread(new Runnable() {
 						public void run() {
-							jgraph = createTree(userId);
+							try {
+								jgraph = createTree(userId);
+							} catch (UserNotFoundException e) {
+								System.out.println("User Not Found");
+							}
 							p.removeAll();
 							p.add(jgraph);
 							scrollpane.revalidate();
@@ -308,12 +313,16 @@ public class UserVisualization extends JFrame {
 					@Override
 					public void run() {
 						userId = txtUserId.getText();
-						jgraph = createTree(userId);
-						p.removeAll();
-						p.add(jgraph);
+						try {
+							jgraph = createTree(userId);
+							p.removeAll();
+							p.add(jgraph);
+							scrollpane.revalidate();
+							scrollpane.repaint();
+						} catch (UserNotFoundException e) {
+							System.out.println("User Not Found");
+						}
 						txtUserId.setText("");
-						scrollpane.revalidate();
-						scrollpane.repaint();
 					}
 				});
 				t.start();
@@ -331,7 +340,11 @@ public class UserVisualization extends JFrame {
 		DateFilter df = new DateFilter();
 		UserProfile userprofile = df.choosePeriod(date1, date2, userId);
 
-		jgraph = createTree("f_" + userprofile.getUser_id());
+		try {
+			jgraph = createTree("f_" + userprofile.getUser_id());
+		} catch (UserNotFoundException e) {
+			System.out.println("User Not Found");
+		}
 		p.add(jgraph);
 		p.revalidate();
 		p.repaint();
@@ -345,20 +358,23 @@ public class UserVisualization extends JFrame {
 	 * @param userId
 	 * @return jgraph
 	 */
-	public JGraph createTree(String userId) {
+	public JGraph createTree(String userId) throws UserNotFoundException {
 
 		ListenableGraph<String, DefaultEdge> g = new ListenableDirectedGraph<>(DefaultEdge.class);
 		jgAdapter = new JGraphModelAdapter<>(g);
 		JGraph jgraph = new JGraph(jgAdapter);
 
-		UserProfile userprofile = Database.users.get(userId);
-
-		try {
-			t.printProfile(userId);
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (Database.users.get(userId) == null) {
+			throw new UserNotFoundException("User Not Found");
+		} else {
+			try {
+				t.printProfile(userId);
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				System.out.println("File not Found");
+			}
 		}
+
+		UserProfile userprofile = Database.users.get(userId);
 
 		if (userprofile.getUser_id().contains("f_")) {
 			userprofile.getUser_id().replace("f_", "");
