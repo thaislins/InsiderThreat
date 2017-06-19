@@ -12,7 +12,6 @@ import br.imd.filedata.Device;
 import br.imd.filedata.HTTP;
 import br.imd.filedata.Logon;
 import br.imd.profile.Database;
-import br.imd.profile.Main;
 import br.imd.profile.PC;
 import br.imd.profile.UserProfile;
 
@@ -146,24 +145,5 @@ public class Threats {
 		}
 		System.out.println("Printed to file");
 		writer.close();
-	}
-
-	public static void main(String args[]) {
-
-		Main t = new Main();
-		t.readLDAP();
-		t.readFiles("Device");
-		t.readFiles("Logon");
-		t.readFiles("Http");
-
-		Threats t1 = new Threats();
-
-		t1.getActivityCount();
-		t1.defineThreat();
-		try {
-			t1.detect();
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-			System.out.println("File not Found");
-		}
 	}
 }

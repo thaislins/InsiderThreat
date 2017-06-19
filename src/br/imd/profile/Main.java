@@ -14,7 +14,12 @@ import br.imd.filedata.Logon;
 import br.imd.gui.UserVisualization;
 
 /**
- * Classe responsável pelo funcionamento do programa
+ * Programa que realiza a detecção de ameaças internas de acordo com informações
+ * de usuários e a média de acessos gerais dos usuários
+ * 
+ * @author Sara Souza
+ * @author Thais Lins
+ * @since Junho, 2017
  */
 public class Main {
 

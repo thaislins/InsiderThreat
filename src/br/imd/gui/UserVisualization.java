@@ -52,6 +52,7 @@ import org.jgrapht.graph.DefaultListenableGraph;
 import org.jgrapht.graph.DirectedMultigraph;
 import org.jgrapht.graph.ListenableDirectedGraph;
 
+import br.imd.anomalies.Threats;
 import br.imd.exception.UserNotFoundException;
 import br.imd.filedata.Device;
 import br.imd.filedata.HTTP;
@@ -81,6 +82,7 @@ public class UserVisualization extends JFrame {
 	private JButton btnReadLDAP;
 	private JButton btnReadFiles;
 	private JButton btnChooseDate;
+	private JButton btnPrintSuspects;
 	private JComboBox<String> chooseFile;
 	private JComboBox<String> dateType;
 	private JTextField txtUserId;
@@ -118,6 +120,7 @@ public class UserVisualization extends JFrame {
 
 		// Permite scroll no JPanel
 		scrollpane = new JScrollPane(p);
+		btnPrintSuspects = new JButton("Print Suspects");
 
 		// JPanel que terá botôes para interação do usuário
 		JPanel p2 = new JPanel();
@@ -190,6 +193,7 @@ public class UserVisualization extends JFrame {
 					chooseUserId(p2);
 					p2.remove(dateType);
 					p2.remove(btnChooseDate);
+					p2.remove(btnUserId);
 					JTextField txtDate1 = new JTextField();
 					JTextField txtDate2 = new JTextField();
 					JButton btnFilteredDate = new JButton("Enter");
@@ -212,6 +216,11 @@ public class UserVisualization extends JFrame {
 							t.readFiles("Logon");
 							t.readFiles("Http");
 							System.out.println("Read all files");
+							btnPrintSuspects.setBounds(90, 230, 150, 15);
+							p2.remove(btnReadAll);
+							p2.add(btnPrintSuspects);
+							printSuspects();
+							p2.repaint();
 						}
 					});
 
@@ -266,6 +275,10 @@ public class UserVisualization extends JFrame {
 
 				t.readFiles(fileChoice);
 				System.out.println("File Read");
+				btnPrintSuspects.setBounds(490, 230, 150, 15);
+				p2.add(btnPrintSuspects);
+				printSuspects();
+				p2.repaint();
 				if (!userId.equals("")) {
 					Thread t = new Thread(new Runnable() {
 						public void run() {
@@ -431,6 +444,28 @@ public class UserVisualization extends JFrame {
 			emptyX += 100;
 		}
 		return jgraph;
+	}
+
+	/**
+	 * Imprime usuários suspeitos/ameaças internas em um arquivo na pasta "logs"
+	 * quando o método for chamado
+	 */
+	public void printSuspects() {
+		btnPrintSuspects.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Threats t1 = new Threats();
+
+				t1.getActivityCount();
+				t1.defineThreat();
+				try {
+					t1.detect();
+				} catch (FileNotFoundException | UnsupportedEncodingException e1) {
+					System.out.println("File not Found");
+				}
+			}
+
+		});
 	}
 
 	@SuppressWarnings("unchecked")
